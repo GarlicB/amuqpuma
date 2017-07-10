@@ -16,7 +16,7 @@
 
 
 
-# Check
+# Check for token.
 TOKEN=$(git config --local --get PAT.Token)
 USER_ID=$(git config --local --get PAT.User)
 BR_O=$(git symbolic-ref --short HEAD)
@@ -25,7 +25,7 @@ BR_O=$(git symbolic-ref --short HEAD)
 # Before running this, a new commit must be pushed to your origin repo.
 if [ $1 = 'upload' ]
 then
-	if [ -z $T ]
+	if [ -z $TOKEN ]
 	then
 		echo "Only the first attempt require your ID and password."
 		read ID
@@ -44,7 +44,7 @@ then
 		echo "Please write the title and contents of the pull-request."
 		read TITLE
 		read BODY
-		echo "Enter the name of upstream branch"
+		echo "Enter upstream's branch name"
 		read BR_U
 		curl -X POST -u "$USER_ID:$TOKEN" -d '{"title":"'$TITLE'", "body":"'$BODY'", "head":"'$ID':'$BR_O'","base":"'$BR_U'"}' "https://api.github.com/repos/GarlicB/amuqpuma/pulls"
 	fi
