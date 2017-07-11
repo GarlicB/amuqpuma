@@ -51,10 +51,11 @@ then
 
 
 # Cherry-pick specific pull-request on command-line
+elif [ $1 -gt 0 ]
+then
+
+	git pull https://github.com/GarlicB/amuqpuma pull/$1/head:pr-$1
+
 else
-	let $1
-	if [ $? = 0 ]
-	then
-		git pull https://github.com/GarlicB/amuqpuma pull/$1/head:pr-$1
-	fi
+	echo "Try again"
 fi
