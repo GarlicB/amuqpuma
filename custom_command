@@ -16,7 +16,7 @@
 
 
 
-# Check for token.
+# Check for token & current branch.
 TOKEN=$(git config --local --get PAT.Token)
 USER_ID=$(git config --local --get PAT.User)
 BR_O=$(git symbolic-ref --short HEAD)
@@ -46,7 +46,12 @@ then
 		read BODY
 		echo "Enter upstream's branch name"
 		read BR_U
-		curl -X POST -u "$USER_ID:$TOKEN" -d '{"title":"'$TITLE'", "body":"'$BODY'", "head":"'$ID':'$BR_O'","base":"'$BR_U'"}' "https://api.github.com/repos/GarlicB/amuqpuma/pulls"
+
+		touch curl_data.json
+		echo "{\"title\" : \"$TITLE\",\"body\" : \"$BODY\",
+		  \"head\" : \"$USER_ID:$BR_O\",\"base\" : \"$BR_U\"}" >> curl_data.json
+		curl -g -X POST -u "$USER_ID:$TOKEN" -d '@curl_data.json' "https://api.github.com/repos/GarlicB/amuqpuma/pulls"
+		rm curl_data.json
 	fi
 
 
