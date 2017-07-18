@@ -7,3 +7,4 @@
 0007. Test custom_command for 'pull-request'
 0008. Collaborator with 'rockplani'
 0009. Test pr in collaborator position
+0010. Test pr.js with prfunc.js
