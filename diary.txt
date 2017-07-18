@@ -9,3 +9,4 @@
 0009. Test pr in collaborator position
 0010. Test pr.js with prfunc.js
 0011. Git push test branch for pull-request
+0012. Ok, i will edit 0011.
