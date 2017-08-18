@@ -11,4 +11,5 @@
 0011. Git push test branch for pull-request
 0012. Ok, i will edit 0011.
 0013. Pr on forked repository
-0014. Is it possible just edit in forekd repo? 
+0014. Is it possible just edit in forekd repo?
+0015. Test github-from-cmd
