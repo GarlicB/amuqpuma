@@ -12,4 +12,5 @@
 0012. Ok, i will edit 0011.
 0013. Pr on forked repository
 0014. Is it possible just edit in forekd repo?
-0015. Test github-from-cmd
+0015. Create new module - github-from-cmd
+0016. Test github-from-cmd
