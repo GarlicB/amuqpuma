@@ -14,3 +14,4 @@
 0014. Is it possible just edit in forekd repo?
 0015. Create new module - github-from-cmd
 0016. Test github-from-cmd
+0017. complicated parent & forked repo T.T
